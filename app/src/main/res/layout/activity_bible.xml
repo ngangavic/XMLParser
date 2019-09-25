@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     tools:context=".BibleActivity">
 
     <ScrollView
@@ -16,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:padding="4dp"
             android:id="@+id/textViewBible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

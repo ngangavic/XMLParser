@@ -28,9 +28,12 @@ public class BibleActivity extends AppCompatActivity {
 
         try{
             InputStream inputStream = getAssets().open("esv.xml");
+
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
             Document document = documentBuilder.parse(inputStream);
+
+
             Element element = document.getDocumentElement();
             element.normalize();
 
@@ -40,8 +43,9 @@ public class BibleActivity extends AppCompatActivity {
                 Node node = nodeList.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element2 = (Element) node;
-                    Log.d("VNO: ",element2.getAttribute("vnumber"));
-                    textViewBible.setText(textViewBible.getText()+element2.getAttribute("vnumber")+getValue("VERS",element2)+"\n");
+                    textViewBible.setText(String.format("%s\n%s%s\n", textViewBible.getText(),
+                            element2.getAttribute("cnumber"),
+                            getValue("VERS", element2)));
                 }
             }
 
