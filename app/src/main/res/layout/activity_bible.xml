@@ -7,13 +7,25 @@
     android:padding="10dp"
     tools:context=".BibleActivity">
 
-    <TextView
-        android:id="@+id/textViewBible"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewBible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
